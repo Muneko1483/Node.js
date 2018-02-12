@@ -1,0 +1,15 @@
+{
+  "name": "contador-vistas",
+  "version": "0.0.1",
+  "description": "Contador de Visitas con express",
+  "main": "contador-vistas.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "counter",
+    "express"
+  ],
+  "author": "juan.guzman",
+  "license": "MIT"
+}
