@@ -1,0 +1,27 @@
+extends layout.jade
+
+block content
+   section.container 
+        include header.jade
+        div.item  
+            form.form(method="POST" action="/actualizar/#{data[0].movie_id}")
+                fieldset
+                    div.container.p1
+                        label.item.i-b.v-top.ph3.p0.p_25.right(for="movie_id") IMBD id:
+                        input.item.i-b.v-top.ph9.p0#id(type="text", name="id",value="#{data[0].movie_id}"
+                        , disabled, required) 
+                        input#movie_id(type="hidden", name="movie_id", value="#{data[0].movie_id}",required)
+                    div.container.p1 
+                        label.item.i-b.v-top.ph3.p0.p_25.right(for="title") Titulo:
+                        input.item.i-b.v-top.ph9.p0#title(type="text", name="title",value="#{data[0].title}" required)
+                    div.container.p1
+                        label.item.i-b.v-top.ph3.p0.p_25.right(for="release_year") Año:
+                        input.item.i-b.v-top.ph9.p0#release_year(type="text", name="release_year", value="#{data[0].release_year}" required)
+                    div.container.p1
+                        label.item.i-b.v-top.ph3.p0.p_25.right(for="rating") Calificacion:
+                        input.item.i-b.v-top.ph9.p0#rating(type="text", name="rating", value="#{data[0].rating}" required)
+                    div.container.p1
+                        label.item.i-b.v-top.ph3.p0.p_25.right(for="image") Poster:
+                        input.item.i-b.v-top.ph9.p0#image(type="text", name="image", value="#{data[0].image}" required)
+                    div.container.p1
+                        input.item.ph4.mauto.button.edit(type="submit", value="Editar") 
