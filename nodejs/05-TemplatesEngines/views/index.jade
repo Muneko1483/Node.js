@@ -1,0 +1,70 @@
+extends layout.jade
+block content
+    article#jade.container
+         h1
+            a(href="#{link}", target="_blank")=title
+         p= description  
+
+    article.container 
+            h2 Estructura Basica de Jade
+            p Este archivo HTML es generado con el motor de plantillas Jade
+            p
+                |Para concatenar contenido 
+                |en varias lineas
+                |se usa el pie '|'
+                    
+        include logo     
+        //-interpolacion 
+        p.
+                Si te gusta la forma en la que jade genera codigo HTML
+                puedes leer la documentacion del 
+                #[a(href="http://jade-lang.com/api", target="_blank") API], 
+                la referencia del
+                #[a(href="http://jade-lang.com/reference", target="_blank") Lenguaje], 
+                y de la
+                <a href="http://jade-lang.com/command-line", target="_blank"> Linea de comandos
+                </a>.  
+        br 
+        button#presioname.boton Presioname
+        script.
+            document.querySelector('#presioname').onclick = () =>{
+                alert('He presionado el boton desde Jade en JavaScritp')
+            }
+        -var nombre = 'Jade'
+        p Hola #{nombre}  
+
+        -var fecha = new Date()
+        -var hora = fecha.getHours()
+
+        if (hora < 12)
+             p La hora #{hora} es Antes del Meridiano (AM)
+        else
+             p La hora #{hora} es Posterior del Meridano (PM)  
+
+        -var estaciones = ['Primavera', 'Verano', 'Otoño', 'Invierno']     
+
+        h2 Estaciones del Año
+        ol
+            each estacion in estaciones
+                li #{estacion}
+
+    //-Los mixins son funciones en Jade
+    mixin mesesEstacionesMexico(estacion,meses)
+            div.item
+                h3 #{estacion}
+                ul
+                    each mes in meses
+                        li #{mes}
+
+    article.container                
+        h2 Estaciones del Año en Mexico
+        +mesesEstacionesMexico(estaciones[0],['Abril','Mayo','Junio'])
+        +mesesEstacionesMexico(estaciones[1],['Julio','Agosto','Septiembre'])
+        +mesesEstacionesMexico(estaciones[2],['Octubre','Noviembre','Diciembre'])
+        +mesesEstacionesMexico(estaciones[3],['Enero','Febrero','Marzo'])
+        
+                        
+
+   
+
+            
