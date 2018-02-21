@@ -1,0 +1,29 @@
+{
+  "name": "api-crud-mongo",
+  "version": "0.0.1",
+  "description": "Api REST MVC con Mongo, Express y Node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "supervisor server.js"
+  },
+  "keywords": [
+    "API",
+    "CRUD",
+    "REST",
+    "Mongo"
+  ],
+  "author": "juan.guzman",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-method-override": "0.0.3",
+    "jade": "^1.11.0",
+    "mongoose": "^5.0.6",
+    "morgan": "^1.9.0",
+    "mysql": "^2.15.0",
+    "responsimple": "^1.0.1",
+    "serve-favicon": "^2.4.5"
+  }
+}
